@@ -1,6 +1,10 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all    
+    if params[:search]
+      @events = Event.where("lower(name) like ?", "%#{params[:search].downcase}%" )
+    else
+      @events = Event.where("starts_at > ?", Time.now )
+    end
   end
 
   def show

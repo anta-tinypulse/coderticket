@@ -3,7 +3,18 @@ Rails.application.routes.draw do
 
   resources :events do
     resources :tickets
+    resources :orders
   end
+
+  resources :users
+
+  get 'signup' => 'users#signup'
+  get 'login' => 'users#login'
+  get 'logout' => 'sessions#logout'
+
+  post 'sessions' => 'sessions#create'
+  post 'order' => 'orders#create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
