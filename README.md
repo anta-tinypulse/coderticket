@@ -1,12 +1,12 @@
-# Homework 3 - *Name of App*
+# Homework 3 - *Coder Ticket*
 
-**Name of your app** is a Ruby on Rails blog application that allows users to create and buy tickets to cool events. 
+**Coder Ticket** is a Ruby on Rails blog application that allows users to create and buy tickets to cool events. 
 
-Submitted by: **Your Name Here**
+Submitted by: **An Ta**
 
-Time spent: **X** hours
+Time spent: **12** hours
 
-URL: **Insert your Heroku URL here**
+URL: **https://still-meadow-9427.herokuapp.com/**
 
 SimpleCov Test Coverage: **Insert percentage or link to report here**
 
@@ -18,23 +18,23 @@ The following **required** functionality is complete:
 
 #### Events
 
-* [ ] Users can see a list of upcoming events. Past events should not be shown. **HINT**: Good candidate for a test.
-* [ ] Users can search for events from the homepage.
-* [ ] Users can click on an event to see details about the event. 
-* [ ] Users can click on "Book Now" to go to a page to purchase tickets.
+* [x] Users can see a list of upcoming events. Past events should not be shown. **HINT**: Good candidate for a test.
+* [x] Users can search for events from the homepage.
+* [x] Users can click on an event to see details about the event. 
+* [x] Users can click on "Book Now" to go to a page to purchase tickets.
 
 #### Tickets
 
 * [x] Each event can have multiple types of tickets, each with a different `price` and `max_quantity`. 
-* [ ] Users can buy tickets to an event, choose the types of tickets, and the quantity of tickets.
-* [ ] Users cannot buy more tickets than the quantity available.
-* [ ] Users can only buy up to 10 of a ticket type at a time.
-* [ ] Users cannot buy tickets to events that occur in the past. 
+* [x] Users can buy tickets to an event, choose the types of tickets, and the quantity of tickets.
+* [x] Users cannot buy more tickets than the quantity available.
+* [x] Users can only buy up to 10 of a ticket type at a time.
+* [x] Users cannot buy tickets to events that occur in the past. 
 
 #### Users
 
-* [ ] User can sign up by providing their email, password, and name. 
-* [ ] User can login using an email and password. 
+* [x] User can sign up by providing their email, password, and name. 
+* [x] User can login using an email and password. 
 * [ ] Users can create events. 
 * [ ] Users must click "publish event" before an event becomes viewable to other users. 
 * [ ] Users can create ticket types for that event. 
@@ -53,13 +53,17 @@ The following **required** functionality is complete:
 * [ ] Events are automatically labeled as "Hot". "Hot" events should have a red border or some sort of visual flourish. The event title should also be prefixed with "**HOT:**".
 * [ ] Instead of showing all of the events on the main page, an "admin" user can dictate the events that show up on the main page.
 
+## Video Walkthrough 
+
+GIF created with [LiceCap](https://drive.google.com/open?id=0BwwwHC2oIXDMWjVMdm9DckVsdzA).
+
 ## Notes
 
-Describe any challenges encountered while building the app.
+This is still a work in progress as last week was very busy for me. I'm still working on this and will update it soon.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2015] [An Ta]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
