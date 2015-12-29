@@ -1,0 +1,64 @@
+<div style='background-image: url(<%= image_path('background.png') %>)'>
+  <div class="container" style="padding-top: 70px">
+    <h3 class="text-center" style="color: #FFF">Create New Event</h3>
+
+    <p class="text-center" style="color: #FFF">Enter your event information in the form below</p>
+
+    <div class="row">
+      <div class="new-event-form">
+        <%= form_for Event.new do |f| %>
+          <div class="row" style="margin: 30px 0 20px 0">
+            <%= f.label 'name', class: 'control-label col-sm-2 col-sm-offset-3' %>
+            <div class="col-sm-4">
+              <%= f.text_field 'name', class: 'form-control' %>
+            </div>
+          </div>
+          <div class="row" style="margin: 20px 0 20px 0">
+            <%= f.label 'description', class: 'control-label col-sm-2 col-sm-offset-3' %>
+            <div class="col-sm-4">
+              <%= f.text_area 'extended_html_description', rows: 4, class: 'form-control' %>
+            </div>
+          </div>
+          <div class="row" style="margin: 20px 0 20px 0">
+            <%= f.label 'hero_image_url', class: 'control-label col-sm-2 col-sm-offset-3' %>
+            <div class="col-sm-4">
+              <%= f.text_field 'hero_image_url', class: 'form-control' %>
+            </div>
+          </div>
+          <div class="row" style="margin: 20px 0 20px 0">
+            <%= f.label 'category', class: 'control-label col-sm-2 col-sm-offset-3' %>
+            <div class="col-sm-4">
+              <%= f.collection_select :category_id, Category.all, :id, :name, class: 'form-control' %>
+            </div>
+          </div>
+          <div class="row" style="margin: 20px 0 20px 0">
+            <%= f.label 'venue', class: 'control-label col-sm-2 col-sm-offset-3' %>
+            <div class="col-sm-4">
+              <%= f.collection_select :venue_id, Venue.all, :id, :name, class: 'form-control' %>
+            </div>
+          </div>
+          <div class="row" style="margin: 20px 0 20px 0">
+            <%= f.label 'start_date', class: 'control-label col-sm-2 col-sm-offset-3' %>
+            <div class="col-sm-4">
+              <%= f.date_select 'starts_at', class: 'form-control' %>
+            </div>
+          </div>
+          <div class="row" style="margin: 20px 0 30px 0">
+            <%= f.label 'end_date', class: 'control-label col-sm-2 col-sm-offset-3' %>
+            <div class="col-sm-4">
+              <%= f.date_select 'ends_at', class: 'form-control' %>
+            </div>
+          </div>
+          <div class="row text-center" style="margin: 30px 0 30px 0">
+            <%= f.submit 'OK', class: 'btn btn-info' %>
+            <%= link_to 'Cancel', root_path, class: 'btn btn-info' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div style="margin: 20px 0 20px 0; color: white; font-size: 12px; text-align: center">
+      Coder Ticket &reg; 2015. All rights reserved.
+    </div>
+  </div>
+</div>

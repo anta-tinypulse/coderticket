@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'signup' => 'users#signup'
   get 'login' => 'users#login'
   get 'logout' => 'sessions#logout'
+  get 'my_events' => 'events#my_events'
+  get 'publish/:event_id' => 'events#publish'
 
   post 'sessions' => 'sessions#create'
   post 'order' => 'orders#create'
