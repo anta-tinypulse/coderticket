@@ -4,7 +4,7 @@
 
 Submitted by: **An Ta**
 
-Time spent: **12** hours
+Time spent: **18** hours
 
 URL: **https://still-meadow-9427.herokuapp.com/**
 
@@ -12,7 +12,7 @@ URL: **https://still-meadow-9427.herokuapp.com/**
 
 The following **required** functionality is complete:
 
-* [ ] 10 model tests, 2 route tests, 2 controller tests, 2 view tests.
+* [x] 10 model tests, 2 route tests, 2 controller tests, 2 view tests.
 
 #### Events
 
@@ -35,11 +35,11 @@ The following **required** functionality is complete:
 * [x] User can login using an email and password. 
 * [x] Users can create events. 
 * [x] Users must click "publish event" before an event becomes viewable to other users. 
-* [ ] Users can create ticket types for that event. 
-* [ ] Users can create venues.
-* [ ] An event must have at least one `ticket_type` defined before it can be published. 
+* [x] Users can create ticket types for that event. 
+* [x] Users can create venues.
+* [x] An event must have at least one `ticket_type` defined before it can be published. 
 * [x] User can see a list of events he or she has created.
-* [ ] Users can edit their event after creation. But only the user who created the event can edit the event. 
+* [x] Users can edit their event after creation. But only the user who created the event can edit the event. 
 
 ### Optional Stories
 
@@ -53,7 +53,7 @@ The following **required** functionality is complete:
 
 ## Video Walkthrough 
 
-GIF created with [LiceCap](https://drive.google.com/open?id=0BwwwHC2oIXDMWjVMdm9DckVsdzA).
+![](/coderticket.gif)
 
 ## Notes
 
