@@ -55,10 +55,6 @@ The following **required** functionality is complete:
 
 ![](/coderticket.gif)
 
-## Notes
-
-This is still a work in progress as last week was very busy for me. I'm still working on this and will update it soon.
-
 ## License
 
     Copyright [2015] [An Ta]
