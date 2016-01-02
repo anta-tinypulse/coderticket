@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   resources :events do
     resources :tickets
     resources :orders
+    resources :ticket_types
   end
 
   resources :users
+  resources :venues
 
   get 'signup' => 'users#signup'
   get 'login' => 'users#login'

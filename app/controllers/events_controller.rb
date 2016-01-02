@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :require_login, only: [:new, :my_events, :edit, :update, :create, :pubish]
+
   def index
     if params[:search]
       @events = Event.where("lower(name) like ? and status = 'Published'", "%#{params[:search].downcase}%" )
@@ -26,23 +28,61 @@ class EventsController < ApplicationController
     @events = Event.where(user_id: current_user.id)
   end
 
+  def edit
+    @event = Event.find(params[:id])
+
+    if current_user.id != @event.user_id
+      flash[:error] = 'You are not the author of this event!'
+      redirect_to event_path(@event)
+    end
+  end
+
   def create
     @event = Event.new(event_params)
     @event.status = "Draft"
     @event.user_id = current_user.id
-    @event.save!
 
-    flash[:notice] = 'Event was created successfully'
-    redirect_to root_path
+    if @event.save
+      flash[:notice] = 'Event was created successfully!'
+      redirect_to new_event_ticket_type_path(@event)
+    else
+      flash[:error] = 'An error has occured while creating event.'
+      redirect_to new_event_path
+    end
+  end
+
+  def update
+    @event = Event.find(params[:id])
+
+    if current_user.id != @event.user_id
+      flash[:error] = 'You are not the author of this event!'
+      redirect_to event_path(@event)
+    elsif @event.update(event_params)
+      flash[:notice] = 'Event was updated successfully!'
+      redirect_to new_event_ticket_type_path(@event)
+    else
+      flash[:error] = 'An error has occured while updating event.'
+      redirect_to edit_event_path(@event)
+    end
   end
 
   def publish
     @event = Event.find(params[:event_id])
-    @event.status = 'Published'
-    @event.save!
 
-    flash[:notice] = 'Event was published successfully'
-    redirect_to event_path(params[:event_id])
+    if @event.ticket_types && @event.ticket_types.count > 0
+      @event.status = 'Published'
+
+      if @event.save
+        flash[:notice] = 'Event was published successfully!'
+        redirect_to event_path(params[:event_id])
+      else
+        flash[:error] = 'An error occured while publishing event.'
+        redirect_to event_path(params[:event_id])
+      end
+    else
+      flash[:error] = 'You must create at least 1 ticket type for this event.'
+      redirect_to event_path(params[:event_id])
+    end
   end
 
   def event_params
